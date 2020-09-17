@@ -13,7 +13,7 @@ Accept: application/json
         {"ano": "2019"}
     ],
     "valores": [
-        {"imdb": 6,6},
+        {"imdb": 6.6},
         {"rottentomatoes": 68}
     ]
 }
