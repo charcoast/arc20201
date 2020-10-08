@@ -1,3 +1,4 @@
+import requests
 def validar_json(dados):
     # Verificar se os campos obrigatórios do JSON constam e são válidos.
 
@@ -26,6 +27,24 @@ def validar_json(dados):
             resposta = {
                 "Erro": "Campo 'valores' deve ser uma lista não vazia."}
             return resposta, 400
+
+    if "marcadores" not in dados:
+        # Em caso contrário, retornar 400.
+        resposta = {"Erro": "Campo 'marcadores' inexistente."}
+        return resposta, 400
+    else:
+        def get_url_from_json(elemento):
+            if "url" in elemento:
+                return elemento["url"]
+                
+        url = list(filter(get_url_from_json, dados['marcadores']))[0]['url']
+        print(url)
+        try:
+            r = requests.get(url)
+        except:
+            resposta = {
+                "Erro": "URL inválida."}
+            return resposta,400 
 
     # Se todas as verificações foram feitas, retornar 200.
     resposta = {"Sucesso": "JSON válido."}

@@ -18,10 +18,10 @@ load_dotenv()
 # Seja via arquivo .env convertido para variáveis de ambiente, ou mesmo
 # variáveis de ambiente em outras IDEs, como Gitpod, o próximo passo
 # é carregar variáveis do servidor InfluxDB para este programa.
-baseurl = environ.get("INFLUXDB_BASEURL")
-org = environ.get("INFLUXDB_ORG")
-bucket = environ.get("INFLUXDB_BUCKET")
-token = environ.get("INFLUXDB_TOKEN")
+baseurl = "https://us-central1-1.gcp.cloud2.influxdata.com/"
+org = "0391eb3b53b56383"
+bucket = "Medicoes"
+token = "t17QVk_zxbZX4A851K5HqqrxhkCkheXqHDYLo0bRz_Qidsz22-X_cA3oDTnOMbCNnXKRbUxek22-B91sbjEX-w=="
 
 
 @app.route("/")
